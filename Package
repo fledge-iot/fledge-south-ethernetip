@@ -1,0 +1,36 @@
+# A set of variables that define how we package this repository
+#
+plugin_name=ethernetip
+plugin_type=south
+plugin_install_dirname=${plugin_name}
+
+# Now build up the runtime requirements list. This has 3 components
+#   1. Generic packages we depend on in all architectures and package managers
+#   2. Architecture specific packages we depend on
+#   3. Package manager specific packages we depend on
+requirements="fledge"
+
+case "$arch" in
+	x86_64)
+		;;
+	armv7l)
+		;;
+	aarch64)
+		;;
+esac
+case "$package_manager" in
+	deb)
+		;;
+	rpm)
+		echo "RPM Package building for ${plugin_name} is not supported on $arch architecture!!"
+		exit 0
+	;;
+esac
+
+# libplctag is built from source by requirements.sh and is not available as a
+# distribution package. The package build bundles the libplctag shared objects
+# from /usr/local/lib into /usr/local/fledge/lib, which is on Fledge's runtime
+# library search path, rather than declaring a Debian dependency.
+# additional_libs lists the same files for the older Fledge packaging tooling.
+# Format is <install-dir>:<file>[:<file>...], install directory relative to /.
+additional_libs="usr/local/fledge/lib:/usr/local/lib/libplctag.so.2.7.2:/usr/local/lib/libplctag.so.2.7:/usr/local/lib/libplctag.so"

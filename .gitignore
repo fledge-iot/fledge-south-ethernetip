@@ -1,0 +1,30 @@
+# Build output
+build/
+cmake_build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+# ...but keep the hand-written top-level convenience Makefile
+!/Makefile
+*.so
+*.so.*
+*.o
+*.a
+
+# Packaging output (shared Fledge CI scripts staged by `make deb`)
+.ci/
+build-out/
+fledge/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test output
+tests/build/
+Testing/

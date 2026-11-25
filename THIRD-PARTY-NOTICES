@@ -1,0 +1,30 @@
+Third-party software used by fledge-south-ethernetip
+====================================================
+
+fledge-south-ethernetip is licensed under the Apache License 2.0 (see LICENSE).
+Copyright (c) 2026 Industrial Intelligence Group, LLC.
+
+The Debian package also bundles the following unmodified third-party library.
+
+libplctag
+---------
+  Version:   2.7.2 (git commit 7712ed7f1ee05ba0ebfca641b3f5c43da52a66ed)
+  Source:    https://github.com/libplctag/libplctag
+  License:   Mozilla Public License 2.0 (MPL-2.0), or alternatively the
+             GNU Lesser General Public License, version 2 or later (LGPL-2.0+),
+             at the recipient's option. The plugin uses the MPL-2.0 option.
+  Copyright: Kyle Hayes and the libplctag contributors.
+  Use:       Built from the source above by requirements.sh and installed as the
+             shared library libplctag.so.2.7.2. The plugin links to it
+             dynamically and does not modify or incorporate its source code.
+
+The MPL-2.0 applies to libplctag's own source files only. It does not apply to
+this plugin's code, which remains under the Apache License 2.0. The library is
+provided as a separate shared object so a recipient can replace it with another
+build of the same release. The complete libplctag source for the bundled
+version is available at the URL and commit above, and its license texts are in
+the files LICENSE-1.MPL and LICENSE-2.LGPL of that repository.
+
+Other dependencies (Fledge C++ SDK, RapidJSON headers) are provided by the
+Fledge installation the plugin is built against and are not bundled.
+Google Test is used only to build the test suites and is not distributed.

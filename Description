@@ -1,0 +1,1 @@
+Fledge South EtherNet/IP plugin. Reads and writes data from Allen-Bradley / Rockwell PLCs (ControlLogix, Logix5000, Micro800, MicroLogix, Omron NJ/NX) via the EtherNet/IP protocol using libplctag.
